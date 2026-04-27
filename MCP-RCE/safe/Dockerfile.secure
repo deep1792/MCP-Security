@@ -1,0 +1,11 @@
+FROM node:18-alpine
+RUN addgroup -g 1001 -S nodeuser && adduser -S nodeuser -u 1001
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm install
+COPY secure-server.js ./
+COPY test-secure.js ./
+COPY hello.txt ./data/
+RUN chown -R nodeuser:nodeuser /app
+USER nodeuser
+CMD ["node", "secure-server.js"]
