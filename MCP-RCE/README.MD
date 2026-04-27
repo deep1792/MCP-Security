@@ -6,11 +6,6 @@ MCP Remote Code Execution (RCE) Vulnerability Lab
 Overview - The Model Context Protocol (MCP) allows AI assistants (like Claude) to interact with external tools. A fundamental design flaw in many MCP implementations – accepted by Anthropic as “expected” behaviour – lets attackers execute arbitrary system commands through malicious tool calls.  
 This lab reproduces the vulnerability in a safe Docker environment and provides a secure alternative.
 
-Real‑World Impact
-- Affects all official MCP SDKs (Python, TypeScript, Java, Rust)
-- >150 million downloads exposed
-- ~200,000 servers potentially vulnerable
-- Multiple CVEs published, e.g., CVE‑2026‑30623 (LiteLLM), CVE‑2026‑33224 (Bisheng)
 
 How MCP Works
 
